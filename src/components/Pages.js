@@ -14,7 +14,7 @@ export const Profile = () => (
       <p>Age: {userData.age}</p>
     </Card.Content>
   </Card>
-)
+);
 
 
 export const Photos = () => (
@@ -24,7 +24,7 @@ export const Photos = () => (
       <Image src={photo.url}/>
     </Card.Content>
   </Card>
-)
+);
 
 
 export const Cocktails = () => {
@@ -35,7 +35,7 @@ export const Cocktails = () => {
     	<p>Description: {drink.description}</p>
     	<br/>
     </li>
-  ))
+  ));
 
   return (
     <Card fluid>
@@ -46,21 +46,21 @@ export const Cocktails = () => {
       </Card.Content>
     </Card>
   )
-}
+};
 
 
 export class Pokemon extends React.Component {
 
   state = {
     pokemon: null
-  }
+  };
 
   getRandomPokemon = () => {
     const pokeId = Math.round(Math.random()*802)
     fetch(`https://pokeapi.co/api/v2/pokemon/${pokeId}`)
       .then(res => res.json())
       .then(pokemon => this.setState({pokemon: pokemon}))
-  }
+  };
 
   componentDidMount() {
     this.getRandomPokemon()
@@ -82,7 +82,7 @@ export class Pokemon extends React.Component {
         <Loader active size='large'>Loading</Loader>
       </div>
     )
-  }
+  };
 
   render() {
     return (
